@@ -1,5 +1,5 @@
 import React, { useEffect,useContext, useState } from 'react'
-import {user} from "../Join/Join.js"
+//import {user} from "../Join/Join.js"
 import socketIO from "socket.io-client";
 import "./Chat.css";
 import sendLogo from "../../images/send.png"

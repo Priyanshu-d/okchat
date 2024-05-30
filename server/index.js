@@ -5,7 +5,7 @@ const socketIO = require("socket.io");
 const { log } = require("console");
 const app=express();
  
-const port =process.env.PORT ; 
+const port =process.env.PORT ||4500 ; 
 
 const users=[{}]
 

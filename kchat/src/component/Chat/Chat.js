@@ -8,8 +8,7 @@ import Message from "../Message/Message";
 import ReactScrollToBottom from "react-scroll-to-bottom";
 import closeIcon from "../../images/closeIcon.png";
 
-const ENDPOINT="http://localhost:4500/"
-
+const ENDPOINT=process.env.REACT_APP_ENDPOINT || "http://localhost:4500/";
 let socket;
 
 const Chat = () => {
@@ -31,7 +30,7 @@ const Chat = () => {
 useEffect(() => {
      socket=socketIO(ENDPOINT,{transports:['websocket']});
   socket.on("connect",()=>{
-    alert('connected');
+   //S alert('connected');
     setId(socket.id);
   });
  

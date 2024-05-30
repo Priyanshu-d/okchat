@@ -5,7 +5,7 @@ const socketIO = require("socket.io");
 const { log } = require("console");
 const app=express();
  
-const port =process.env.PORT ||4500 ; 
+const port =process.env.REACT_APP_ENDPOINT ||4500 ; 
 
 const users=[{}]
 
@@ -39,7 +39,7 @@ socket.on('message',({message,id})=>{
 
 socket.on("disconnect",()=>{
   if (users[socket.id]) {
-    socket.broadcast.emit('leave',{user:"Admin:",message:`${users[socket.id]} has left`});
+    socket.broadcast.emit('leave',{user:"Admin",message:`${users[socket.id]} has left`});
   
     console.log('emitted');
   }
